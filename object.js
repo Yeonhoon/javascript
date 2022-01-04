@@ -18,7 +18,7 @@ function printValue(obj,key){
     console.log(obj[key]) // obj.key는 undefined 
 }
 
-printValue()
+// printValue(yeonhoon, 'name');
 
 // 3. Property value shorthand
 const person1 = {name:'bob', age: 2};
@@ -47,3 +47,20 @@ const arr1 = [1,2,3,4,5];
 for (a of arr1) {
     console.log(a);
 }
+
+// 7. function cloning.
+
+const user = {name:'hihi', age: 20};
+const user2 = user;
+
+user2.name = 'coder'; //user2는 user 참조 ==> user2가 변경되면 user도 변경됨.
+console.log(user);
+
+const user4 = Object.assign({},user);
+console.log(user4);
+
+const fruit1 = {color:'red'};
+const fruit2 = {color:'blue',size:'big'};
+const mixed = Object.assign({},fruit1, fruit2) // 뒤의 것으로 앞의 것을 뒤덮음.
+
+console.log(mixed);
